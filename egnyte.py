@@ -35,7 +35,7 @@ def test_verify_equals():
         verify_equals(1, 2)
         raise Exception("oops, it didn't fail as expected")
     except NotEqualException:
-        print("verify_equals failed - as expected")
+        pass
 
 def test_verify_not_equals():
     verify_not_equals(2, 1)
@@ -43,7 +43,7 @@ def test_verify_not_equals():
         verify_not_equals(1, 1)
         raise Exception("oops, it didn't fail as expected")
     except EqualException:
-        print("verify_not_equals failed - as expected")
+        pass
 
 def test_verify_type():
     verify_type(1, type(2))
@@ -52,7 +52,7 @@ def test_verify_type():
         verify_type('abc', type(1))
         raise Exception("oops, it didn't fail as expected")
     except InvalidTypeException:
-        print("verify_type failed - as expected")
+        pass
 
 # auxiliary methods for test_verify_returns
 
@@ -69,7 +69,7 @@ def test_verify_returns():
         verify_returns(2, add, 1, 2)
         raise Exception("oops, it didn't fail as expected")
     except InvalidReturnException:
-        print("verify_returns failed - as expected")
+        pass
 
 
 # executing tests
@@ -77,3 +77,4 @@ test_verify_equals()
 test_verify_not_equals()
 test_verify_type()
 test_verify_returns()
+print("All tests passed")
